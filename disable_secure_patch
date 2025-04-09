@@ -1,0 +1,13 @@
+diff --git a/src/guidellm/utils/text.py b/src/guidellm/utils/text.py
+index f8c5038..3024a77 100644
+--- a/src/guidellm/utils/text.py
++++ b/src/guidellm/utils/text.py
+@@ -325,7 +325,7 @@ def load_text(data: Union[str, Path], encoding: Optional[str] = None) -> str:
+ 
+     # check URLs
+     if isinstance(data, str) and data.startswith("http"):
+-        response = requests.get(data, timeout=settings.request_timeout)
++        response = requests.get(data, timeout=settings.request_timeout, verify=False)
+         response.raise_for_status()
+         return response.text
+ 
