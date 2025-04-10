@@ -6,7 +6,7 @@ RUN dnf install -y \
     python3.12-pip \
     git
 
-RUN pip3.12 install git+https://github.com/neuralmagic/guidellm@main
+RUN pip3.12 install git+https://github.com/neuralmagic/guidellm@perf_fixes
 
 # Create a non-root user
 RUN useradd -u 1001 -m guidellm
